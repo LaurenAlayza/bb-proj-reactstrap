@@ -10,6 +10,15 @@ import {
   AvCheckbox,
 } from "availity-reactstrap-validation";
 
+const spanStyles = {
+  color: "#474973"
+};
+
+const button = {
+  backgroundColor: "#474973"
+};
+
+
 
 const Signup = (props) => {
   const [username, setUsername] = useState("");
@@ -32,7 +41,7 @@ const Signup = (props) => {
   };
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1 style={spanStyles} >Sign Up</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="username">Username</Label>
@@ -52,7 +61,7 @@ const Signup = (props) => {
             minlength="5"
           />
         </FormGroup>
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit" style={button}>Sign Up</Button>
       </Form>
     </div>
   );

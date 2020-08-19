@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import {
-  AvForm,
-  AvField,
-  AvGroup,
-  AvInput,
-  AvFeedback,
-  AvCheckboxGroup,
-  AvCheckbox,
-} from "availity-reactstrap-validation";
+
+
+const spanStyles = {
+  color: "#474973"
+};
+
+const button = {
+  backgroundColor: "#474973",
+};
+
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -34,7 +35,7 @@ const Login = (props) => {
   };
   return (
     <div>
-      <h1>Login</h1>
+      <h1 style={spanStyles}>Login</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlfor="username">Username</Label>
@@ -55,7 +56,7 @@ const Login = (props) => {
             minlength="5"
           />
         </FormGroup>
-        <Button type="submit">Login</Button>
+        <Button type="submit" style={button}>Login</Button>
       </Form>
     </div>
   );
