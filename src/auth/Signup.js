@@ -1,34 +1,25 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import {
-  AvForm,
-  AvField,
-  AvGroup,
-  AvInput,
-  AvFeedback,
-  AvCheckboxGroup,
-  AvCheckbox,
-} from "availity-reactstrap-validation";
-
+// inline styling
 const spanStyles = {
-  color: "#474973"
+  color: "#474973",
 };
-
+// inline styling
 const button = {
-  backgroundColor: "#474973"
+  backgroundColor: "#474973",
 };
-
-
 
 const Signup = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [accounttype, setAccounttype] = useState("maker");
+
   let handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/api/user/", {
+    fetch("http://localhost:3000/polis/user", {
       method: "POST",
       body: JSON.stringify({
-        user: { username: username, passwordhash: password },
+        user: { username: username, passwordhash: password, accounttype: accounttype},
       }),
       headers: new Headers({
         "Content-Type": "application/json",
@@ -36,12 +27,13 @@ const Signup = (props) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         props.updateToken(data.sessionToken);
       });
   };
   return (
     <div>
-      <h1 style={spanStyles} >Sign Up</h1>
+      <h1 style={spanStyles}>Sign Up</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="username">Username</Label>
@@ -49,7 +41,8 @@ const Signup = (props) => {
             onChange={(e) => setUsername(e.target.value)}
             name="username"
             value={username}
-            type="email" required
+            type="email"
+            required
           />
         </FormGroup>
         <FormGroup>
@@ -61,7 +54,9 @@ const Signup = (props) => {
             minlength="5"
           />
         </FormGroup>
-        <Button type="submit" style={button}>Sign Up</Button>
+        <Button type="submit" style={button}>
+          Sign Up
+        </Button>
       </Form>
     </div>
   );
@@ -69,3 +64,6 @@ const Signup = (props) => {
 
 export default Signup;
 
+//also need to add choose accounttype
+//option set or checkmark change usestate, if checked usestate maker check,  cant be both. 
+//html functions - knows only 1 selection with option set. 

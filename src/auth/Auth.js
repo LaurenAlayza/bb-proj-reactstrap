@@ -2,19 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Signup from "./Signup";
 import Login from "./Login";
-import {
-  AvForm,
-  AvField,
-  AvGroup,
-  AvInput,
-  AvFeedback,
-  AvCheckboxGroup,
-  AvCheckbox,
-} from "availity-reactstrap-validation";
-// import { Button, Label, FormGroup, CustomInput } from "reactstrap";
 
 const Auth = (props) => {
-    
   return (
     <Container className="auth-container">
       <Row>

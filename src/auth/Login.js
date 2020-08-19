@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
-
 const spanStyles = {
-  color: "#474973"
+  color: "#474973",
 };
 
 const button = {
   backgroundColor: "#474973",
 };
 
-
 const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [accounttype, setAccounttype] = useState("");
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/api/login/", {
+    fetch("http://localhost:3000/polis/user/login", {
       method: "POST",
       body: JSON.stringify({
         user: { username: username, passwordhash: password },
@@ -56,7 +54,9 @@ const Login = (props) => {
             minlength="5"
           />
         </FormGroup>
-        <Button type="submit" style={button}>Login</Button>
+        <Button type="submit" style={button}>
+          Login
+        </Button>
       </Form>
     </div>
   );
