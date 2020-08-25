@@ -10,7 +10,6 @@ import {
   Button,
 } from "reactstrap";
 
-
 import { Route, Link, Switch } from "react-router-dom";
 
 const navstyle = {
@@ -40,12 +39,12 @@ const Sitebar = (props) => {
   };
 
   return (
-     <header>
-        <Navbar style={navstyle} light expand="md">
-         <NavbarBrand href="/" style={font}>
-           Polis Post
-         </NavbarBrand>
-         <div className="sitebar-list-styling">
+    <header>
+      <Navbar style={navstyle} light expand="md">
+        <NavbarBrand href="/" style={font}>
+          Polis Post
+        </NavbarBrand>
+        <div className="sitebar-list-styling">
           <ul className="sitebar-list list-unstyled">
             <li>
               <Link to="/">Home</Link>
@@ -58,18 +57,17 @@ const Sitebar = (props) => {
             </li>
           </ul>
         </div>
-           
-         
+
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <Button  onClick={props.clickLogout}>Logout</Button>
+              <Button onClick={props.clearToken}>Logout</Button>
             </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
-     </header>
+    </header>
   );
 };
 

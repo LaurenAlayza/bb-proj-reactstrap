@@ -3,8 +3,10 @@ const Blog = () => {
   return (
     <div className="main">
       <div className="mainDiv">
-        <h1>About this app and how to use it!</h1>
+        <h1>Let me tell you about how I made this app!</h1>
         <p>
+        First I made my server <br />
+          Next I made the client <br />
           Tart icing croissant halvah chocolate cake fruitcake gummi bears
           muffin halvah. Danish marzipan gummies sweet donut pudding toffee
           candy pudding. Biscuit gummies dragée chocolate.
