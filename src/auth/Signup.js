@@ -19,7 +19,11 @@ const Signup = (props) => {
     fetch("http://localhost:3000/polis/user", {
       method: "POST",
       body: JSON.stringify({
-        user: { username: username, passwordhash: password, accounttype: accounttype},
+        user: {
+          username: username,
+          passwordhash: password,
+          accounttype: accounttype,
+        },
       }),
       headers: new Headers({
         "Content-Type": "application/json",
@@ -27,7 +31,7 @@ const Signup = (props) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         props.updateToken(data.sessionToken);
       });
   };
@@ -57,6 +61,15 @@ const Signup = (props) => {
         <Button type="submit" style={button}>
           Sign Up
         </Button>
+        <br />
+        <br />
+        <label for="usertype">Please choose a user type: </label>
+        <select id="usertype">
+          <optgroup label="Are you a Template Maker or User?">
+            <option value="maker">Template Maker</option>
+            <option value="maker">Template User</option>
+          </optgroup>
+        </select>
       </Form>
     </div>
   );
@@ -65,5 +78,5 @@ const Signup = (props) => {
 export default Signup;
 
 //also need to add choose accounttype
-//option set or checkmark change usestate, if checked usestate maker check,  cant be both. 
-//html functions - knows only 1 selection with option set. 
+//option set or checkmark change usestate, if checked usestate maker check,  cant be both.
+//html functions - knows only 1 selection with option set.

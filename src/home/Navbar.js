@@ -10,6 +10,9 @@ import {
   Button,
 } from "reactstrap";
 
+
+import { Route, Link, Switch } from "react-router-dom";
+
 const navstyle = {
   color: "#474973",
   backgroundColor: "#a69cac",
@@ -28,7 +31,6 @@ const font = {
   color: "#474973",
 };
 
-
 const Sitebar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,19 +40,36 @@ const Sitebar = (props) => {
   };
 
   return (
-    <Navbar style={navstyle} light expand="md">
-      <NavbarBrand href="/" style={font}>Polis Post</NavbarBrand>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
-        <Nav className="ml-auto" navbar>
-          <NavItem>
-            <Button style={logoutstyle} onClick={props.clickLogout}>
-              Logout
-            </Button>
-          </NavItem>
-        </Nav>
-      </Collapse>
-    </Navbar>
+     <header>
+        <Navbar style={navstyle} light expand="md">
+         <NavbarBrand href="/" style={font}>
+           Polis Post
+         </NavbarBrand>
+         <div className="sitebar-list-styling">
+          <ul className="sitebar-list list-unstyled">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+          </ul>
+        </div>
+           
+         
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <Button  onClick={props.clickLogout}>Logout</Button>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+     </header>
   );
 };
 
