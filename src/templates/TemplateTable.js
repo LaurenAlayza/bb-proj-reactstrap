@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
+import APIURL from '../helpers/environment';
 
 const updatestyle = {
   color: "#474973",
@@ -16,7 +17,7 @@ const deletestyle = {
 
 const TemplateTable = (props) => {
   const deleteTemplate = (template) => {
-    fetch(`http://localhost:3000/polis/temp/${template.id}`, {
+    fetch(`${APIURL}/polis/temp/${template.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

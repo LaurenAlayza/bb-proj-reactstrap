@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import TemplateCreate from "./TemplateCreate";
 import TemplateTable from "./TemplateTable";
 import TemplateEdit from "./TemplateEdit";
+import APIURL from "../helpers/environment";
 
 const TemplateIndex = (props) => {
   const [templates, setTemplates] = useState([]);
@@ -13,7 +14,7 @@ const TemplateIndex = (props) => {
   }, [templateToUpdate]);
 
   const fetchTemplates = () => {
-    fetch("http://localhost:3000/polis/temp", {
+    fetch(`${APIURL}/polis/temp`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

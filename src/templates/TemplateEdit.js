@@ -9,6 +9,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
+import APIURL from '../helpers/environment';
 
 const TemplateEdit = (props) => {
   const [editSubjLine, setEditSubjLine] = useState(
@@ -20,7 +21,7 @@ const TemplateEdit = (props) => {
   const [editKeys, setEditKeys] = useState(props.templateToUpdate.keys);
   const templateUpdate = (event, template) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/polis/temp/${props.templateToUpdate.owner}`, {
+    fetch(`${APIURL}/polis/temp/${props.templateToUpdate.owner}`, {
       method: "PUT",
       body: JSON.stringify({
         temp: {
