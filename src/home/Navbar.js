@@ -30,6 +30,13 @@ const font = {
   color: "#474973",
 };
 
+const ulstyle = {
+  display: "inline",
+  fontFamily: "Arial",
+  color: "#474973",
+  padding: "8px"
+}
+
 const Sitebar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,14 +52,14 @@ const Sitebar = (props) => {
           Polis Post
         </NavbarBrand>
         <div className="sitebar-list-styling">
-          <ul className="sitebar-list list-unstyled">
-            <li>
+          <ul className="sitebar-list list-unstyled" style={ulstyle}>
+            <li style={ulstyle}>
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li style={ulstyle}>
               <Link to="/about">About</Link>
             </li>
-            <li>
+            <li style={ulstyle}>
               <Link to="/blog">Blog</Link>
             </li>
           </ul>
@@ -62,7 +69,7 @@ const Sitebar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <Button onClick={props.clearToken}>Logout</Button>
+              <Button style={logoutstyle}onClick={props.clearToken}>Logout</Button>
             </NavItem>
           </Nav>
         </Collapse>

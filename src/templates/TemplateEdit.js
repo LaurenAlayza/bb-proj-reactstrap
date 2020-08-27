@@ -9,22 +9,23 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
+
 const TemplateEdit = (props) => {
   const [editSubjLine, setEditSubjLine] = useState(
-    props.templateToUpdate.subjLine
+    props.templateToUpdate 
   );
   const [editMsgBody, setEditMsgBody] = useState(
-    props.templateToUpdate.definition
+    props.templateToUpdate.msgBody
   );
-  const [editKeys, setEditKeys] = useState(props.templateToUpdate.result);
+  const [editKeys, setEditKeys] = useState(props.templateToUpdate.keys);
   const templateUpdate = (event, template) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/polis/temp/${props.templateToUpdate.id}`, {
+    fetch(`http://localhost:3000/polis/temp/${props.templateToUpdate.owner}`, {
       method: "PUT",
       body: JSON.stringify({
         temp: {
-          template: editSubjLine,
-          subjLine: editMsgBody,
+          subjLine: editSubjLine,
+          msgBody: editMsgBody,
           keys: editKeys,
         },
       }),
@@ -43,7 +44,7 @@ const TemplateEdit = (props) => {
       <ModalBody>
         <Form onSubmit={templateUpdate}>
           <FormGroup>
-            <Label htmlFor="result">Edit Subject Line</Label>
+            <Label htmlFor="subjLine">Edit Subject Line</Label>
             <Input
               name="subjLine"
               value={editSubjLine}
@@ -51,7 +52,7 @@ const TemplateEdit = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="MsgBody">Edit Message Body:</Label>
+            <Label htmlFor="msgBody">Edit Message Body:</Label>
             <Input
               name="msgBody"
               value={editMsgBody}

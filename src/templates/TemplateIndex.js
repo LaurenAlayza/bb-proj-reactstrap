@@ -3,10 +3,15 @@ import { Container, Row, Col } from "reactstrap";
 import TemplateCreate from "./TemplateCreate";
 import TemplateTable from "./TemplateTable";
 import TemplateEdit from "./TemplateEdit";
+
 const TemplateIndex = (props) => {
   const [templates, setTemplates] = useState([]);
   const [updateActive, setUpdateActive] = useState(false);
   const [templateToUpdate, setTemplateToUpdate] = useState({});
+  useEffect(() => {
+    console.log(templateToUpdate);
+  }, [templateToUpdate]);
+
   const fetchTemplates = () => {
     fetch("http://localhost:3000/polis/temp", {
       method: "GET",
@@ -52,7 +57,7 @@ const TemplateIndex = (props) => {
         <Col>
           {updateActive ? (
             <TemplateEdit
-              templatesToUpdate={templateToUpdate}
+              templateToUpdate={templateToUpdate}
               updateOff={updateOff}
               token={props.token}
               fetchTemplates={fetchTemplates}

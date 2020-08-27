@@ -1,6 +1,19 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
 
+const updatestyle = {
+  color: "#474973",
+  backgroundColor: "#a69cac",
+  padding: "10px",
+  fontFamily: "Arial",
+};
+const deletestyle = {
+  color: "#white",
+  backgroundColor: "#474973",
+  padding: "10px",
+  fontFamily: "Arial",
+};
+
 const TemplateTable = (props) => {
   const deleteTemplate = (template) => {
     fetch(`http://localhost:3000/polis/temp/${template.id}`, {
@@ -22,7 +35,8 @@ const TemplateTable = (props) => {
           <td>{template.keys}</td>
           <td>
             <Button
-              color="warning"
+              style={updatestyle}
+              // color="warning"
               onClick={() => {
                 props.editUpdateTemplate(template);
                 props.updateOn();
@@ -31,7 +45,8 @@ const TemplateTable = (props) => {
               Update
             </Button>
             <Button
-              color="danger"
+              style={deletestyle}
+              // color="danger"
               onClick={() => {
                 deleteTemplate(template);
               }}
@@ -51,7 +66,7 @@ const TemplateTable = (props) => {
       <Table striped>
         <thead>
           <tr>
-            <th>#</th>
+            <th>Temp ID#</th>
             <th>Subject Line</th>
             <th>Message Body</th>
             <th>Keywords</th>

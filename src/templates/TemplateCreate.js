@@ -34,9 +34,10 @@ const TemplateCreate = (props) => {
 
   return (
     <>
-      <h3>Make a Template</h3>
+      <h3>Make a Template</h3> <br />
       <Form onSubmit={handleSubmit}>
         <FormGroup>
+          <h6>Subject Line</h6>
           <Label htmlFor="subjLine" />
           <Input
             type="text"
@@ -45,18 +46,22 @@ const TemplateCreate = (props) => {
             onChange={(e) => setSubjLine(e.target.value)}
           />
         </FormGroup>
+        <br />
         <FormGroup>
+          <h6>Email Message Body</h6>
           <Label htmlFor="msgBody" />
-          <Input
+          <textarea
             type="text"
             size="3000"
-            style={{height:"120px", width: "200px"}}
+            style={{ height: "120px", width: "200px" }}
             name="msgBody"
             value={msgBody}
             onChange={(e) => setMsgBody(e.target.value)}
           />
         </FormGroup>
+        <br />
         <FormGroup>
+          <h6>Add keywords (separated by commas) to describe this template.</h6>
           <Label htmlFor="keys" />
           <Input
             type="text"
