@@ -5,6 +5,13 @@ const TemplateCreate = (props) => {
   const [subjLine, setSubjLine] = useState("");
   const [msgBody, setMsgBody] = useState("");
   const [keys, setKeys] = useState("");
+ 
+  const submitstyle = {
+    color: "#white",
+    backgroundColor: "#474973",
+    padding: "10px",
+    fontFamily: "Arial",
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,7 +77,7 @@ const TemplateCreate = (props) => {
             onChange={(e) => setKeys(e.target.value)}
           />
         </FormGroup>
-        <Button type="submit">Click to Submit</Button>
+        <Button style={submitstyle}type="submit">Click to Submit</Button>
       </Form>
     </>
   );
