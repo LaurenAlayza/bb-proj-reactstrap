@@ -19,7 +19,7 @@ const updatestyle = {
 };
 const TemplateEdit = (props) => {
   const [editSubjLine, setEditSubjLine] = useState(
-    props.templateToUpdate 
+    props.templateToUpdate.subjLine 
   );
   const [editMsgBody, setEditMsgBody] = useState(
     props.templateToUpdate.msgBody
@@ -27,7 +27,7 @@ const TemplateEdit = (props) => {
   const [editKeys, setEditKeys] = useState(props.templateToUpdate.keys);
   const templateUpdate = (event, template) => {
     event.preventDefault();
-    fetch(`${APIURL}/polis/temp/${props.templateToUpdate.owner}`, {
+    fetch(`${APIURL}/polis/temp/${props.templateToUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
         temp: {
