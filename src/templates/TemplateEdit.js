@@ -11,6 +11,12 @@ import {
 } from "reactstrap";
 import APIURL from '../helpers/environment';
 
+const updatestyle = {
+  color: "#white",
+  backgroundColor: "#474973",
+  padding: "10px",
+  fontFamily: "Arial",
+};
 const TemplateEdit = (props) => {
   const [editSubjLine, setEditSubjLine] = useState(
     props.templateToUpdate 
@@ -69,7 +75,7 @@ const TemplateEdit = (props) => {
               onChange={(e) => setEditKeys(e.target.value)}
             />
           </FormGroup>
-          <Button type="submit">Update the template!</Button>
+          <Button style={updatestyle} type="submit">Update the template!</Button>
         </Form>
       </ModalBody>
     </Modal>
