@@ -4,6 +4,9 @@ import TemplateCreate from "./TemplateCreate";
 import TemplateTable from "./TemplateTable";
 import TemplateEdit from "./TemplateEdit";
 import APIURL from "../helpers/environment";
+import Purple from "../assets/Purple.PNG";
+
+
 
 const TemplateIndex = (props) => {
   const [templates, setTemplates] = useState([]);
@@ -41,6 +44,12 @@ const TemplateIndex = (props) => {
   }, []);
 
   return (
+    <div
+    class="bg_image"
+    style={{
+      backgroundImage: 'url('+Purple+')',
+      height: '100vh'
+    }}>
     <Container>
       <Row>
         <Col md="3">
@@ -69,6 +78,7 @@ const TemplateIndex = (props) => {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 export default TemplateIndex;

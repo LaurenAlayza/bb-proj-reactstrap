@@ -13,7 +13,7 @@ import APIURL from '../helpers/environment';
 
 const updatestyle = {
   color: "#white",
-  backgroundColor: "#474973",
+  backgroundColor: "#272456",
   padding: "10px",
   fontFamily: "Arial",
 };

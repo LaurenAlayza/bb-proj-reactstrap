@@ -9,11 +9,17 @@ const TemplateCreate = (props) => {
  
   const submitstyle = {
     color: "#white",
-    backgroundColor: "#474973",
+    backgroundColor: "#272456",
     padding: "10px",
     fontFamily: "Arial",
   };
 
+  const fonts3 = {
+    color: '#272456'
+  }
+  const fonts = {
+    color: "white"
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`${APIURL}/polis/temp/create`, {
@@ -42,10 +48,11 @@ const TemplateCreate = (props) => {
 
   return (
     <>
-      <h3>Make a Template</h3> <br />
+    <div>
+      <h3 style={fonts3}>Make a Template</h3> <br />
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <h6>Subject Line</h6>
+          <h6 style={fonts}>Subject Line</h6>
           <Label htmlFor="subjLine" />
           <Input
             type="text"
@@ -56,7 +63,7 @@ const TemplateCreate = (props) => {
         </FormGroup>
         <br />
         <FormGroup>
-          <h6>Email Message Body</h6>
+          <h6 style={fonts}>Email Message Body</h6>
           <Label htmlFor="msgBody" />
           <textarea
             type="text"
@@ -69,7 +76,7 @@ const TemplateCreate = (props) => {
         </FormGroup>
         <br />
         <FormGroup>
-          <h6>Add keywords (separated by commas) to describe this template.</h6>
+          <h6 style={fonts}>Add keywords (separated by commas) to describe this template.</h6>
           <Label htmlFor="keys" />
           <Input
             type="text"
@@ -80,6 +87,7 @@ const TemplateCreate = (props) => {
         </FormGroup>
         <Button style={submitstyle}type="submit">Click to Submit</Button>
       </Form>
+      </div>
     </>
   );
 };

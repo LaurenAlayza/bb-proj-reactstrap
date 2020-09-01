@@ -13,21 +13,21 @@ import {
 import { Route, Link, Switch } from "react-router-dom";
 
 const navstyle = {
-  color: "#474973",
-  backgroundColor: "#a69cac",
+  color: "white",
+  backgroundColor: "#d8975a",
   padding: "10px",
   fontFamily: "Arial",
 };
 
 const logoutstyle = {
-  color: "#474973",
-  backgroundColor: "#a69cac",
+  color: "white",
+  backgroundColor: "#272456",
   padding: "10px",
   fontFamily: "Arial",
 };
 
 const font = {
-  color: "#474973",
+  color: "white",
 };
 
 const ulstyle = {

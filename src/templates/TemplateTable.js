@@ -3,17 +3,27 @@ import { Table, Button } from "reactstrap";
 import APIURL from '../helpers/environment';
 
 const updatestyle = {
-  color: "#474973",
-  backgroundColor: "#a69cac",
+  color: "white",
+  backgroundColor: "#272456",
   padding: "10px",
   fontFamily: "Arial",
 };
 const deletestyle = {
   color: "#white",
-  backgroundColor: "#474973",
+  backgroundColor: "#d8975a",
   padding: "10px",
   fontFamily: "Arial",
 };
+
+const fonts = {
+  color: "white"
+}
+const fonts2 = {
+  color: '#d8975a'
+}
+const fonts3 = {
+  color: '#272456'
+}
 
 const TemplateTable = (props) => {
   const deleteTemplate = (template) => {
@@ -62,19 +72,21 @@ const TemplateTable = (props) => {
 
   return (
     <>
+    <div style={fonts3}>
       <h3>Template History</h3>
       <hr />
       <Table striped>
         <thead>
           <tr>
-            <th>Temp ID#</th>
-            <th>Subject Line</th>
-            <th>Message Body</th>
-            <th>Keywords</th>
+            <th style={fonts2}>Temp ID#</th>
+            <th style={fonts2}>Subject Line</th>
+            <th style={fonts2}>Message Body</th>
+            <th style={fonts2}>Keywords</th>
           </tr>
         </thead>
-        <tbody>{templateMapper()}</tbody>
+        <tbody style={fonts}>{templateMapper()}</tbody>
       </Table>
+      </div>
     </>
   );
 };

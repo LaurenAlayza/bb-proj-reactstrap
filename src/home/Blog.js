@@ -1,6 +1,6 @@
 import React from "react";
 const mainstyle = {
-  backgroundColor: "#474973",
+  backgroundColor: "#272456",
   color: 'white',
   height: '100%'
 }

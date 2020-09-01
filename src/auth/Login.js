@@ -3,11 +3,15 @@ import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import APIURL from '../helpers/environment';
 
 const spanStyles = {
-  color: "#474973",
+  color: "#272456",
 };
 
+const smolfont = {
+  color: "white"
+}
+
 const button = {
-  backgroundColor: "#474973",
+  backgroundColor: "#272456",
 };
 
 const Login = (props) => {
@@ -37,7 +41,7 @@ const Login = (props) => {
       <h1 style={spanStyles}>Login</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlfor="username">Username</Label>
+          <Label style={smolfont} htmlfor="username">Username</Label>
           <Input
             onChange={(e) => setUsername(e.target.value)}
             name="username"
@@ -47,7 +51,7 @@ const Login = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlfor="password">Password</Label>
+          <Label style={smolfont} htmlfor="password">Password</Label>
           <Input
             onChange={(e) => setPassword(e.target.value)}
             name="password"

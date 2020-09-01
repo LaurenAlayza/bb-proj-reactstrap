@@ -3,12 +3,16 @@ import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import APIURL from '../helpers/environment';
 // inline styling
 const spanStyles = {
-  color: "#474973",
+  color: "#272456",
 };
 // inline styling
 const button = {
-  backgroundColor: "#474973",
+  backgroundColor: "#272456",
 };
+
+const smolfont1 = {
+  color: "white"
+}
 
 const Signup = (props) => {
   const [username, setUsername] = useState("");
@@ -41,7 +45,7 @@ const Signup = (props) => {
       <h1 style={spanStyles}>Sign Up</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlFor="username">Username</Label>
+          <Label style={smolfont1} htmlFor="username">Username</Label>
           <Input
             onChange={(e) => setUsername(e.target.value)}
             name="username"
@@ -51,7 +55,7 @@ const Signup = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="password">Password</Label>
+          <Label style={smolfont1} htmlFor="password">Password</Label>
           <Input
             onChange={(e) => setPassword(e.target.value)}
             name="password"
@@ -64,7 +68,7 @@ const Signup = (props) => {
         </Button>
         <br />
         <br />
-        <label for="usertype">Please choose a user type: </label>
+        <label style={smolfont1} for="usertype">Please choose a user type: </label>
         <select id="usertype">
           <optgroup label="Are you a Template Maker or User?">
             <option value="maker">Template Maker</option>
