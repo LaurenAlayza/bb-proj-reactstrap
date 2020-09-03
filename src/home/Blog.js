@@ -7,7 +7,7 @@ const mainstyle = {
 const maindivstyle = {
   margin: "auto",
   width: "90%",
-  padding: "5px",
+  padding: "100px",
 };
 const Blog = () => {
   return (
@@ -16,20 +16,25 @@ const Blog = () => {
         <h1>The Making of Polis Post</h1>
         <p>
           Hi! My name is Lauren Alayza and I created this app as a part of the
-          Eleven Fifty Academy Blue Badge project. In this blog, I will share
-          what it was like getting to where I am at today with this app. I
-          started Blue Badge at the end of June 2020 and began with learning
-          about adding on to Arrays, mapping them, filtering through them and
-          more. After the first few weeks of introduction to the server side,
-          the cohort began working through assignments and activities to create
-          our first Node server.
+          Eleven Fifty Academy Blue Badge project. I started the Blue Badge
+          program at the end of June 2020 and presented it in class in early 
+          September 2020. To prepare for this project, I
+          created a workout log mockup app utilizing similar concepts. Next, I
+          created a planning document to map out my idea for creating Polis
+          Post. At the time, I didn't know what I was going to name the app. The
+          idea for Polis Post's functionality was inspired by my passion for advocacy and
+          helping others share their stories with decision-makers to create
+          positive change.
         </p>
         <p>
-          In creating the Node server, I learned about ways to check my client
-          side without having ever built it by using tools like PG Admin and
-          Postman.
+          One effective method of sharing stories with legislators is through
+          emails. If you have never emailed your local elected officials before
+          about an issue or concern, it might be difficult to find the words or
+          know where to begin when composing your message. I have created this app 
+          to help others practice drafting emails before sending them, and to find 
+          examples from others to pull from. Check out the About page to read about 
+          tactics when sharing your testimony. 
         </p>
-        <p>And THEN... (to be continued)</p>
       </div>
     </div>
   );
